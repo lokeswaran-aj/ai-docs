@@ -1,0 +1,17 @@
+[project]
+name = "ai-docs"
+version = "0.0.1"
+description = "AI-Docs is an AI-powered chat application that performs RAG (Retrieval-Augmented Generation) on popular technology documentation."
+readme = "README.md"
+authors = [
+    { name = "Lokeswaran Aruljothy", email = "lokeswaranaruljothy@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+graph = "graph:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
