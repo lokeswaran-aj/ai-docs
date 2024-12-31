@@ -4,7 +4,7 @@ from langchain_core.messages import AIMessage, SystemMessage
 from langgraph.graph import END, START, StateGraph
 from langgraph.prebuilt import ToolNode, tools_condition
 
-from graph.configuration import Settings
+from graph.configuration import Configuration
 from graph.prompt import SYSTEM_PROMPT
 from graph.state import State
 from graph.tool import TOOLS
@@ -25,7 +25,7 @@ async def call_agent(state: State, message: str) -> State:
     }
 
 
-graph_builder = StateGraph(State, config_schema=Settings)
+graph_builder = StateGraph(State, config_schema=Configuration)
 
 graph_builder.add_node("agent", call_agent)
 graph_builder.add_node("tools", ToolNode(TOOLS))
