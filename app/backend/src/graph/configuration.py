@@ -6,6 +6,7 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     """Application settings and environment variables."""
 
+    provider: str = "openai"
     model: str = "gpt-4o"
     temperature: float = 0.0
 
